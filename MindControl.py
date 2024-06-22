@@ -1,3 +1,5 @@
+# 나 거북이 좋아하네
+
 import turtle as t
 
 
@@ -16,3 +18,6 @@ t.left(180)
 t.circle(73,221.37)    
 t.forward(200)         
 t.end_fill()
+
+
+t.up
