@@ -83,3 +83,7 @@ class FlyableAttack(Attackunit, Flyable):
     def __init__(self, name, hp, damage, flying_speed):
         Attackunit.__init__(self, name, hp, damage)
         Flyable.__init__(self, flying_speed)
+
+# 발키리 : 공중, 14발 미사일
+valkyrie = FlyableAttack("Valkyrie", 200, 6, 5)
+valkyrie.fly(valkyrie.name, "3시")
