@@ -32,12 +32,16 @@ try:
     print("한 자리 숫자 나누기")
     num1 = int(input("1 입력 : "))
     num2 = int(input("2 입력 : "))
+    
     if num1 >= 10 or num2 >= 10:
         raise BigNumError("입력 값 : {0}, {1}".format(num1, num2))
+    
     print("{0} / {1} = {2}".format(int(num1), int(num2), int(num1/num2)))
 except ValueError as err:
     print("Value Error 0}".format(err))
 except BigNumError as err:
     print("Error! 한자리 숫자 입력")
     print(err)
+finally :
+    print("계산기를 이용해주셔서 감사합니다.")
 

@@ -21,16 +21,31 @@
 # finally:
 #     print("End")
 
+class SoldOutError(Exception):
+    pass
 
 chicken = 10
 waiting = 1
 while(True):
-    print("[남은 치킨 : {0}]".format(chicken))
-    order = int(input("치킨 ?"))
-    
-    if order > chicken:
-        print("재료 부족")
-    else:
-        print("[대기번호 {0}] {1} 마리".format(waiting, order))
-        waiting += 1
-        chicken -= order
+    try:
+        print("[남은 치킨 : {0}]".format(chicken))
+        order = int(input("치킨 ?"))
+
+        if order > chicken:
+            print("재료 부족")
+
+        elif order <= 0 :
+            raise ValueError
+
+        else:
+            print("[대기번호 {0}] {1} 마리".format(waiting, order))
+            waiting += 1
+            chicken -= order
+        if chicken == 0:
+            raise SoldOutError
+        
+    except ValueError:
+        print("Error Value")
+    except SoldOutError:
+        print("재고가 소진되어 더 이상 주문을 받지 않습니다.")
+        break
